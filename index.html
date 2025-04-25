@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALTSETING Miner 2.0</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- User Profile -->
+  <div id="user-profile">
+    <img id="user-avatar" src="default-avatar.png" alt="User Avatar">
+    <div>
+      <div id="user-title">Bronze</div>
+      <div id="user-level">Level 1</div>
+    </div>
+  </div>
+
+  <!-- Main Game Screen -->
+  <div id="game-screen" class="screen active">
+    <div style="text-align: center; margin-top: 10px;">
+      <img src="logo.png" alt="ALTSETING Logo" class="logo" />
+    </div>
+
+    <!-- Miner Tab -->
+    <div id="miner-tab" class="tab">
+      <div class="miner-box">
+        <button id="mineButton"></button>
+        <p>You have <span id="altCount">0</span> ALT coins</p>
+      </div>
+    </div>
+
+    <!-- Upgrades Tab -->
+    <div id="upgrades-tab" class="tab" style="display: none;">
+      <h2>Upgrades</h2>
+      <div class="upgrades-list" id="upgrades-list"></div>
+    </div>
+
+    <!-- NFT Tab -->
+    <div id="nft-tab" class="tab" style="display: none;">
+      <h2>Your NFTs</h2>
+      <div class="nft-gallery" id="nft-gallery"></div>
+      <h3>ALT-Genius Rewards</h3>
+      <div class="nft-gallery" id="genius-nft-gallery"></div>
+    </div>
+
+    <!-- Socials Tab -->
+    <div id="socials-tab" class="tab" style="display: none;">
+      <h2>Join Us</h2>
+      <p>Follow us on social media:</p>
+      <div class="socials">
+        <a href="https://twitter.com" target="_blank">Twitter</a>
+        <a href="https://youtube.com" target="_blank">YouTube</a>
+        <a href="https://facebook.com" target="_blank">Facebook</a>
+        <a href="https://instagram.com" target="_blank">Instagram</a>
+        <a href="https://t.me" target="_blank">Telegram</a>
+        <a href="https://reddit.com" target="_blank">Reddit</a>
+        <a href="https://tiktok.com" target="_blank">TikTok</a>
+      </div>
+    </div>
+
+    <!-- Quiz ALT-Genius Tab -->
+    <div id="quiz-tab" class="tab" style="display: none;">
+      <h2>🧠 ALT-Genius</h2>
+      <div id="quiz-question">Loading...</div>
+      <div id="quiz-options"></div>
+    </div>
+
+  </div>
+
+  <!-- Navigation -->
+  <footer>
+    <div class="nav-button-container">
+      <div class="nav-btn" onclick="showTab('miner-tab')">⛏️<br>Miner</div>
+      <div class="nav-btn" onclick="showTab('upgrades-tab')">⚙️<br>Upgrades</div>
+      <div class="nav-btn" onclick="showTab('nft-tab')">🖼️<br>NFTs</div>
+      <div class="nav-btn" onclick="showTab('socials-tab')">🌐<br>Socials</div>
+      <div class="nav-btn" onclick="showTab('quiz-tab')">🧠<br>Genius</div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
