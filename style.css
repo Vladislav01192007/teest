@@ -1,0 +1,205 @@
+/* === Global Styles === */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('background.png');
+    background-size: cover;
+    background-repeat: repeat;
+  }
+  
+  /* === User Profile === */
+  #user-profile {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  #user-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+  }
+  
+  /* === Screens === */
+  .screen {
+    margin-top: 80px;
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  /* === Tabs === */
+  .tab {
+    display: none;
+  }
+  .tab.active {
+    display: block;
+  }
+  
+  /* === Logo === */
+  .logo {
+    max-width: 120px;
+    margin-bottom: 20px;
+  }
+  
+  /* === Miner Section === */
+  .miner-box {
+    text-align: center;
+  }
+  
+  #mineButton {
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, #00ffaa, #00cccc);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 20px #00ffaa;
+    transition: 0.3s;
+  }
+  
+  #mineButton:hover {
+    box-shadow: 0 0 40px #00ffaa;
+  }
+  
+  #altCount {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 2.5rem;
+    color: #00ffaa;
+    text-shadow: 0 0 10px #00ffcc;
+  }
+  
+  /* === Upgrades Section === */
+  .upgrades-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .upgrade {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #00ffaa;
+  }
+  
+  .upgrade button {
+    padding: 8px 14px;
+    background: linear-gradient(145deg, #00ccff, #00ffaa);
+    border: none;
+    border-radius: 8px;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .upgrade button:hover {
+    background: linear-gradient(145deg, #00ffaa, #00ffcc);
+  }
+  
+  /* === NFT Galleries === */
+  .nft-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  /* === Socials Section === */
+  .socials {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .socials a {
+    color: #00ffff;
+    text-decoration: none;
+    font-weight: bold;
+    background: rgba(0, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    transition: background 0.3s;
+  }
+  
+  .socials a:hover {
+    background: rgba(0, 255, 255, 0.3);
+  }
+  
+  /* === Footer Navigation === */
+  footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #111;
+    border-top: 2px solid #00ffff;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    box-shadow: 0 -5px 10px rgba(0, 255, 255, 0.3);
+    border-radius: 20px 20px 0 0;
+  }
+  
+  .nav-button-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+  
+  .nav-btn {
+    color: #00ffff;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .nav-btn:hover {
+    transform: scale(1.1);
+  }
+  
+  /* === Quiz Buttons === */
+  #quiz-options button {
+    display: block;
+    margin: 10px auto;
+    padding: 12px 18px;
+    font-size: 16px;
+    background: linear-gradient(145deg, #00cccc, #00ffaa);
+    border: none;
+    border-radius: 10px;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  #quiz-options button:hover {
+    background: linear-gradient(145deg, #00ffaa, #00ffcc);
+  }
+  
