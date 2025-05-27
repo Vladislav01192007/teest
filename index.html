@@ -1,85 +1,221 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ALTSETING Miner 2.0</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ALTSETING Token ($ALTST)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link rel="icon" href="logo.jpg" type="image/jpeg">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+      color: #fff;
+    }
+    header {
+      background: #111;
+      padding: 30px 20px;
+      text-align: center;
+      animation: fadeIn 1.5s ease forwards;
+    }
+    header img {
+      width: 120px;
+      height: auto;
+      margin-bottom: 15px;
+      animation: fadeIn 1.5s ease forwards;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.8rem;
+      color: #00ffc6;
+      animation: fadeIn 2s ease forwards;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #ccc;
+      animation: fadeIn 2.5s ease forwards;
+    }
+    nav {
+      text-align: center;
+      margin: 20px 0;
+    }
+    nav a {
+      color: #00ffc6;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: opacity 0.8s ease-in-out, transform 0.3s;
+      opacity: 0;
+      animation: fadeIn 2s ease forwards;
+    }
+    nav a:hover {
+      transform: scale(1.1);
+      text-shadow: 0 0 10px #00ffc6;
+    }
+    .lang-switcher {
+      text-align: center;
+      margin: 10px;
+    }
+    .lang-switcher button {
+      background: transparent;
+      border: 1px solid #00ffc6;
+      color: #00ffc6;
+      margin: 0 5px;
+      padding: 5px 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .lang-switcher button:hover {
+      background: #00ffc6;
+      color: #000;
+    }
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 30px;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0, 255, 198, 0.4);
+      animation: fadeIn 2s ease forwards;
+    }
+    h2 {
+      color: #00ffc6;
+      animation: fadeIn 2s ease forwards;
+    }
+    .cta {
+      display: inline-block;
+      background: #00ffc6;
+      color: #000;
+      padding: 12px 30px;
+      margin-top: 20px;
+      border-radius: 10px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s, transform 0.3s;
+      animation: fadeIn 2.2s ease forwards;
+    }
+    .cta:hover {
+      background: #00e6b8;
+      transform: scale(1.05);
+    }
+    ul {
+      list-style-type: square;
+      padding-left: 20px;
+      animation: fadeIn 2.3s ease forwards;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #000;
+      font-size: 0.9rem;
+      color: #888;
+      animation: fadeIn 2.5s ease forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <h1>ALTSETING Token ($ALTST)</h1>
+    <p id="subtitle">Мем-токен з реальним майбутнім</p>
+  </header>
 
-  <!-- User Profile -->
-  <div id="user-profile">
-    <img id="user-avatar" src="default-avatar.png" alt="User Avatar">
-    <div>
-      <div id="user-title">Bronze</div>
-      <div id="user-level">Level 1</div>
-    </div>
+  <div class="lang-switcher">
+    <button onclick="setLang('uk')">Українська</button>
+    <button onclick="setLang('en')">English</button>
+    <button onclick="setLang('pl')">Polski</button>
   </div>
 
-  <!-- Main Game Screen -->
-  <div id="game-screen" class="screen active">
-    <div style="text-align: center; margin-top: 10px;">
-      <img src="logo.jpg" alt="ALTSETING Logo" class="logo" />
-    </div>
+  <nav>
+    <a href="https://t.me/ALTsetingtoken" target="_blank">Telegram</a>
+    <a href="https://x.com/altseting?s=21" target="_blank">Twitter</a>
+    <a href="https://discord.gg/DKXXzjF7" target="_blank">Discord</a>
+    <a href="https://pump.fun/HMhDW4sGKN2G2RCKtFnXkDujTJcTRQTQKDtvduTrpump" target="_blank">Pump.fun</a>
+  </nav>
 
-    <!-- Miner Tab -->
-    <div id="miner-tab" class="tab">
-      <div class="miner-box">
-        <button id="mineButton"></button>
-        <p>You have <span id="altCount">0</span> ALT coins</p>
-      </div>
-    </div>
+  <section>
+    <h2 id="about-title">Про ALTSETING</h2>
+    <p id="about-text">ALTSETING Token — це не просто ще один мем-токен. Це революційний проєкт, який поєднує гейміфікацію, NFT, Telegram-бота та криптовалюту в єдину екосистему. З нашою командою ви отримаєте новий досвід у світі Web3.</p>
 
-    <!-- Upgrades Tab -->
-    <div id="upgrades-tab" class="tab" style="display: none;">
-      <h2>Upgrades</h2>
-      <div class="upgrades-list" id="upgrades-list"></div>
-    </div>
+    <h2 id="why-title">Чому саме ALTSETING?</h2>
+    <ul id="features">
+      <li>🎮 Гейміфікований майнінг прямо у Telegram</li>
+      <li>🌐 Повна екосистема з WebApp, NFT та гаманцем</li>
+      <li>🚀 Справжнє комʼюніті, побудоване на взаємодії</li>
+      <li>💸 Винагороди за рефералів і активність</li>
+    </ul>
 
-    <!-- NFT Tab -->
-    <div id="nft-tab" class="tab" style="display: none;">
-      <h2>Your NFTs</h2>
-      <div class="nft-gallery" id="nft-gallery"></div>
-      <h3>ALT-Genius Rewards</h3>
-      <div class="nft-gallery" id="genius-nft-gallery"></div>
-    </div>
+    <a href="https://t.me/ALTsetingtoken" class="cta" target="_blank" id="cta-button">Приєднатись до руху</a>
+  </section>
 
-    <!-- Socials Tab -->
-    <div id="socials-tab" class="tab" style="display: none;">
-      <h2>Join Us</h2>
-      <p>Follow us on social media:</p>
-      <div class="socials">
-        <a href="https://twitter.com" target="_blank">Twitter</a>
-        <a href="https://youtube.com" target="_blank">YouTube</a>
-        <a href="https://facebook.com" target="_blank">Facebook</a>
-        <a href="https://instagram.com" target="_blank">Instagram</a>
-        <a href="https://t.me" target="_blank">Telegram</a>
-        <a href="https://reddit.com" target="_blank">Reddit</a>
-        <a href="https://tiktok.com" target="_blank">TikTok</a>
-      </div>
-    </div>
-
-    <!-- Quiz ALT-Genius Tab -->
-    <div id="quiz-tab" class="tab" style="display: none;">
-      <h2>🧠 ALT-Genius</h2>
-      <div id="quiz-question">Loading...</div>
-      <div id="quiz-options"></div>
-    </div>
-
-  </div>
-
-  <!-- Navigation -->
   <footer>
-    <div class="nav-button-container">
-      <div class="nav-btn" onclick="showTab('miner-tab')">⛏️<br>Miner</div>
-      <div class="nav-btn" onclick="showTab('upgrades-tab')">⚙️<br>Upgrades</div>
-      <div class="nav-btn" onclick="showTab('nft-tab')">🖼️<br>NFTs</div>
-      <div class="nav-btn" onclick="showTab('socials-tab')">🌐<br>Socials</div>
-      <div class="nav-btn" onclick="showTab('quiz-tab')">🧠<br>Genius</div>
-    </div>
+    &copy; 2025 ALTSETING Token. Усі права захищені.
   </footer>
 
-  <script src="main.js"></script>
+  <script>
+    const translations = {
+      uk: {
+        subtitle: "Мем-токен з реальним майбутнім",
+        aboutTitle: "Про ALTSETING",
+        aboutText: "ALTSETING Token — це не просто ще один мем-токен. Це революційний проєкт, який поєднує гейміфікацію, NFT, Telegram-бота та криптовалюту в єдину екосистему. З нашою командою ви отримаєте новий досвід у світі Web3.",
+        whyTitle: "Чому саме ALTSETING?",
+        features: [
+          "🎮 Гейміфікований майнінг прямо у Telegram",
+          "🌐 Повна екосистема з WebApp, NFT та гаманцем",
+          "🚀 Справжнє комʼюніті, побудоване на взаємодії",
+          "💸 Винагороди за рефералів і активність"
+        ],
+        cta: "Приєднатись до руху"
+      },
+      en: {
+        subtitle: "The meme token with real potential",
+        aboutTitle: "About ALTSETING",
+        aboutText: "ALTSETING Token is not just another meme token. It’s a revolutionary project combining gamification, NFTs, a Telegram bot, and cryptocurrency into one ecosystem. With our team, you’ll get a new experience in the Web3 world.",
+        whyTitle: "Why ALTSETING?",
+        features: [
+          "🎮 Gamified mining inside Telegram",
+          "🌐 Full ecosystem with WebApp, NFTs, and wallet",
+          "🚀 Real community based on interaction",
+          "💸 Rewards for referrals and activity"
+        ],
+        cta: "Join the movement"
+      },
+      pl: {
+        subtitle: "Token memiczny z prawdziwym potencjałem",
+        aboutTitle: "O ALTSETING",
+        aboutText: "ALTSETING Token to nie tylko kolejny token memiczny. To rewolucyjny projekt łączący gamifikację, NFT, bota Telegram i kryptowalutę w jednym ekosystemie. Z naszym zespołem otrzymasz nowe doświadczenie w świecie Web3.",
+        whyTitle: "Dlaczego ALTSETING?",
+        features: [
+          "🎮 Gamifikowane kopanie w Telegramie",
+          "🌐 Pełny ekosystem z WebApp, NFT i portfelem",
+          "🚀 Prawdziwa społeczność oparta na interakcji",
+          "💸 Nagrody za polecenia i aktywność"
+        ],
+        cta: "Dołącz do ruchu"
+      }
+    };
+
+    function setLang(lang) {
+      const t = translations[lang];
+      document.getElementById('subtitle').textContent = t.subtitle;
+      document.getElementById('about-title').textContent = t.aboutTitle;
+      document.getElementById('about-text').textContent = t.aboutText;
+      document.getElementById('why-title').textContent = t.whyTitle;
+      const featureList = document.getElementById('features');
+      featureList.innerHTML = '';
+      t.features.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        featureList.appendChild(li);
+      });
+      document.getElementById('cta-button').textContent = t.cta;
+    }
+  </script>
 </body>
 </html>
