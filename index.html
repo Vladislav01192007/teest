@@ -5,14 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ALTSETING Token ($ALTST)</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
-  <link rel="icon" href="logo.jpg" type="image/jpeg">
-
+  <link rel="icon" href="logo.png" type="image/png">
   <style>
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
       font-family: 'Orbitron', sans-serif;
       background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
       color: #fff;
+    }
+    #preloader {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    #preloader img {
+      width: 100px;
+      animation: spin 2s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
     header {
       background: #111;
@@ -22,7 +40,6 @@
     }
     header img {
       width: 120px;
-      height: auto;
       margin-bottom: 15px;
       animation: fadeIn 1.5s ease forwards;
     }
@@ -30,12 +47,10 @@
       margin: 0;
       font-size: 2.8rem;
       color: #00ffc6;
-      animation: fadeIn 2s ease forwards;
     }
     header p {
       font-size: 1.2rem;
       color: #ccc;
-      animation: fadeIn 2.5s ease forwards;
     }
     nav {
       text-align: center;
@@ -46,9 +61,7 @@
       text-decoration: none;
       margin: 0 15px;
       font-weight: bold;
-      transition: opacity 0.8s ease-in-out, transform 0.3s;
-      opacity: 0;
-      animation: fadeIn 2s ease forwards;
+      transition: 0.3s;
     }
     nav a:hover {
       transform: scale(1.1);
@@ -79,12 +92,8 @@
       background: rgba(0, 0, 0, 0.4);
       border-radius: 20px;
       box-shadow: 0 0 20px rgba(0, 255, 198, 0.4);
-      animation: fadeIn 2s ease forwards;
     }
-    h2 {
-      color: #00ffc6;
-      animation: fadeIn 2s ease forwards;
-    }
+    h2 { color: #00ffc6; }
     .cta {
       display: inline-block;
       background: #00ffc6;
@@ -95,7 +104,6 @@
       font-weight: bold;
       text-decoration: none;
       transition: background 0.3s, transform 0.3s;
-      animation: fadeIn 2.2s ease forwards;
     }
     .cta:hover {
       background: #00e6b8;
@@ -104,7 +112,22 @@
     ul {
       list-style-type: square;
       padding-left: 20px;
-      animation: fadeIn 2.3s ease forwards;
+    }
+    .nft-gallery {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .nft-gallery img {
+      width: 150px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00ffc6;
+      transition: transform 0.3s ease;
+    }
+    .nft-gallery img:hover {
+      transform: scale(1.1);
     }
     footer {
       text-align: center;
@@ -112,7 +135,6 @@
       background: #000;
       font-size: 0.9rem;
       color: #888;
-      animation: fadeIn 2.5s ease forwards;
     }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(10px); }
@@ -121,7 +143,12 @@
   </style>
 </head>
 <body>
+  <div id="preloader">
+    <img src="logo.png" alt="Loading..." />
+  </div>
+
   <header>
+    <img src="logo.png" alt="ALTSETING Logo">
     <h1>ALTSETING Token ($ALTST)</h1>
     <p id="subtitle">Мем-токен з реальним майбутнім</p>
   </header>
@@ -131,13 +158,6 @@
     <button onclick="setLang('en')">English</button>
     <button onclick="setLang('pl')">Polski</button>
   </div>
-
-  <nav>
-    <a href="https://t.me/ALTsetingtoken" target="_blank">Telegram</a>
-    <a href="https://x.com/altseting?s=21" target="_blank">Twitter</a>
-    <a href="https://discord.gg/DKXXzjF7" target="_blank">Discord</a>
-    <a href="https://pump.fun/HMhDW4sGKN2G2RCKtFnXkDujTJcTRQTQKDtvduTrpump" target="_blank">Pump.fun</a>
-  </nav>
 
   <section>
     <h2 id="about-title">Про ALTSETING</h2>
@@ -154,6 +174,33 @@
     <a href="https://t.me/ALTsetingtoken" class="cta" target="_blank" id="cta-button">Приєднатись до руху</a>
   </section>
 
+  <section id="nfts">
+    <h2>NFT-Collection</h2>
+    <div class="nft-gallery">
+      <img src="nft1.png" alt="NFT 1" />
+      <img src="nft2.png" alt="NFT 2" />
+      <img src="nft3.png" alt="NFT 3" />
+    </div>
+  </section>
+
+  <section id="altst-nft" style="padding: 50px; text-align: center; background: linear-gradient(to right, #1e1e2f, #2e2e4f); color: white;">
+  <h2 style="font-size: 36px; margin-bottom: 20px;" id="nft-title">🚀 ALTSETING NFT — більше ніж токен</h2>
+  <p style="font-size: 18px; max-width: 800px; margin: auto;" id="nft-description">
+    ALTSETING NFT — це твій ключ до майбутнього. Отримай <b>бонуси в Telegram-боті</b>, <b>знижки на фарм ALT</b>, <b>ексклюзивні права</b> в комʼюніті.
+  </p>
+
+  <div style="display: flex; justify-content: center; gap: 20px; margin-top: 30px; flex-wrap: wrap;">
+    <a href="https://x.com/altseting?s=21" target="_blank" style="padding: 12px 24px; background-color: #1DA1F2; color: white; border-radius: 8px; text-decoration: none; font-weight: bold;">🐦 Twitter</a>
+    <a href="https://discord.gg/DKXXzjF7" target="_blank" style="padding: 12px 24px; background-color: #5865F2; color: white; border-radius: 8px; text-decoration: none; font-weight: bold;">💬 Discord</a>
+    <a href="https://pump.fun/AsJmSvxB8aP5GMjtzqo6KzRXQ4z8rv2r4oB87gUDpump" target="_blank" style="padding: 12px 24px; background-color: #ff007a; color: white; border-radius: 8px; text-decoration: none; font-weight: bold;">📈 Pump.fun</a>
+  </div>
+
+  <p style="font-size: 16px; margin-top: 40px; opacity: 0.8;" id="nft-note">
+    Колекціонування ще ніколи не було таким прибутковим. ALTSETING — це не просто NFT, це доступ до екосистеми майбутнього!
+  </p>
+</section>
+
+
   <footer>
     &copy; 2025 ALTSETING Token. Усі права захищені.
   </footer>
@@ -161,6 +208,10 @@
   <script>
     const translations = {
       uk: {
+        nftTitle: "🚀 ALTSETING NFT — більше ніж токен",
+        nftDescription: "ALTSETING NFT — це твій ключ до майбутнього. Отримай бонуси в Telegram-боті, знижки на фарм ALT, ексклюзивні права в комʼюніті.",
+        nftNote: "Колекціонування ще ніколи не було таким прибутковим. ALTSETING — це не просто NFT, це доступ до екосистеми майбутнього!",
+
         subtitle: "Мем-токен з реальним майбутнім",
         aboutTitle: "Про ALTSETING",
         aboutText: "ALTSETING Token — це не просто ще один мем-токен. Це революційний проєкт, який поєднує гейміфікацію, NFT, Telegram-бота та криптовалюту в єдину екосистему. З нашою командою ви отримаєте новий досвід у світі Web3.",
@@ -174,6 +225,10 @@
         cta: "Приєднатись до руху"
       },
       en: {
+        nftTitle: "🚀 ALTSETING NFT — more than just a token",
+        nftDescription: "ALTSETING NFT is your key to the future. Get bonuses in the Telegram bot, discounts for farming ALT, and exclusive community perks.",
+        nftNote: "Collecting has never been this powerful. ALTSETING NFTs grant access to the ecosystem of the future!",
+
         subtitle: "The meme token with real potential",
         aboutTitle: "About ALTSETING",
         aboutText: "ALTSETING Token is not just another meme token. It’s a revolutionary project combining gamification, NFTs, a Telegram bot, and cryptocurrency into one ecosystem. With our team, you’ll get a new experience in the Web3 world.",
@@ -187,6 +242,10 @@
         cta: "Join the movement"
       },
       pl: {
+        nftTitle: "🚀 ALTSETING NFT — więcej niż token",
+        nftDescription: "ALTSETING NFT to Twój klucz do przyszłości. Zyskaj bonusy w bocie Telegram, zniżki na farmienie ALT i wyjątkowe przywileje społecznościowe.",
+        nftNote: "Kolekcjonowanie nigdy nie było tak opłacalne. ALTSETING to dostęp do ekosystemu przyszłości!",
+
         subtitle: "Token memiczny z prawdziwym potencjałem",
         aboutTitle: "O ALTSETING",
         aboutText: "ALTSETING Token to nie tylko kolejny token memiczny. To rewolucyjny projekt łączący gamifikację, NFT, bota Telegram i kryptowalutę w jednym ekosystemie. Z naszym zespołem otrzymasz nowe doświadczenie w świecie Web3.",
@@ -215,7 +274,16 @@
         featureList.appendChild(li);
       });
       document.getElementById('cta-button').textContent = t.cta;
+      document.getElementById('nft-title').textContent = t.nftTitle;
+      document.getElementById('nft-description').textContent = t.nftDescription;
+      document.getElementById('nft-note').textContent = t.nftNote;
+
     }
+
+    window.addEventListener("load", () => {
+      document.getElementById("preloader").style.display = "none";
+    });
   </script>
 </body>
 </html>
+
